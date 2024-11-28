@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandro Medina - Marketing Digital</title>
+    <style>
+        /* Configuración básica */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+            color: white;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Encabezado */
+        header {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            animation: rotate 20s linear infinite;
+            transform-origin: center;
+            pointer-events: none;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        header h1 {
+            font-size: 4rem;
+            color: white;
+            z-index: 1;
+        }
+        header p {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            margin: 20px 0;
+            z-index: 1;
+        }
+
+        /* Secciones */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .services, .about {
+            background: linear-gradient(135deg, #333399, #cc00ff);
+            color: white;
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .services h2, .about h2 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        /* Formulario de contacto */
+        .contact {
+            background: linear-gradient(45deg, #0072ff, #00ffcc);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .contact input, .contact textarea, .contact button {
+            margin: 10px 0;
+            width: calc(100% - 40px);
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact input, .contact textarea {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .contact input:focus, .contact textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            background: #101010;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Leandro Medina</h1>
+        <p>Innovación y marketing digital: tu puente al éxito.</p>
+        <button onclick="scrollToSection('services')">Descubre más</button>
+    </header>
+    <section id="services" class="services">
+        <h2>Servicios</h2>
+        <ul>
+            <li>🌟 Estrategias digitales diseñadas a tu medida.</li>
+            <li>📊 Campañas publicitarias con resultados medibles.</li>
+            <li>🎨 Creación de contenido impactante para redes.</li>
+            <li>🔍 Optimización SEO y análisis profundo.</li>
+            <li>🚀 Planificación de branding digital.</li>
+        </ul>
+    </section>
+    <section id="about" class="about">
+        <h2>Sobre mí</h2>
+        <p>Mi nombre es Leandro Medina y llevo más de 2 años inmerso en el mundo del marketing digital. Desde Perú, me he dedicado a construir proyectos que inspiren y ofrezcan resultados tangibles. Con certificaciones internacionales y una pasión por la tecnología, trabajo cada día para conectar marcas con personas de maneras únicas y efectivas.</p>
+        <p>Creo firmemente que el éxito requiere no solo estrategia, sino también dedicación y creatividad. ¡Hagamos realidad tus metas!</p>
+    </section>
+    <section class="contact">
+        <h2>Contáctame</h2>
+        <form action="mailto:tuemail@ejemplo.com" method="post" enctype="text/plain">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <textarea placeholder="Escribe tu mensaje aquí" row"5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2024 Leandro Medina. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
